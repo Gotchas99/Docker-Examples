@@ -1,0 +1,16 @@
+{
+	"category" : "TTBookService",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"id",
+		"author",
+		"title" ],
+	"name" : "TTBook",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

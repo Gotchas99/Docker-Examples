@@ -1,0 +1,3 @@
+initialize
+isVoyageRoot
+	^true

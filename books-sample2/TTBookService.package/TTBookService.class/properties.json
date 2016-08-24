@@ -1,0 +1,14 @@
+{
+	"category" : "TTBookService",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Default" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"teapot" ],
+	"name" : "TTBookService",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
