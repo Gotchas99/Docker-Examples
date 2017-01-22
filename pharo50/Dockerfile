@@ -2,6 +2,7 @@ FROM gotchas/pharo-base
 MAINTAINER CAs
 
 RUN groupadd mygroup && useradd -m -g mygroup myuser
+USER myuser
 WORKDIR /home/myuser
 #WORKDIR /opt
 RUN curl get.pharo.org/50+vm | bash
