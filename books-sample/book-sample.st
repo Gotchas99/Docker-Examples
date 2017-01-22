@@ -1,6 +1,6 @@
 books := Dictionary new.
 b := {'author' -> 'Douglas Adams'. 
-      'title'  -> 'The Hitchhiker's Guide to the Galaxy'} asDictionary.
+      'title'  -> 'The Hitchhiker''s Guide to the Galaxy'} asDictionary.
 books at: 42 put: b.
         
 teapot := Teapot configure: {
