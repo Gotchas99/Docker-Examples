@@ -1,4 +1,4 @@
-FROM gotchas/pharo50
+FROM gotchas/pharo-rfb
 #FROM gotchas/pharo-vnc
 MAINTAINER Christer Assmundsson
 
