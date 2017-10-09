@@ -1,5 +1,5 @@
 # for running interactive Pharo with VNC
-FROM  gotchas/pharo50
+FROM  gotchas/pharo61
 
 # Install LXDE, VNC server and Firefox
 RUN apt-get update && \
