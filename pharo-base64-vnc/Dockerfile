@@ -12,7 +12,7 @@ RUN apt-get update && \
 ENV USER root
 # Set default password
 COPY password.txt .
-RUN mkdir /home/myuser/.vnc \
+RUN mkdir -p /home/myuser/.vnc \
   && cat password.txt password.txt | vncpasswd -f > /home/myuser/.vnc/passwd \
   && rm password.txt \
   && chmod 600 /home/myuser/.vnc/passwd
