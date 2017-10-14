@@ -14,11 +14,12 @@ ENV USER root
 COPY password.txt .
 RUN cat password.txt password.txt | vncpasswd && \
 rm password.txt
+
 # Expose VNC port
 EXPOSE 5901
 
 # Copy VNC script that handles restarts
 COPY vnc.sh /opt
 
-RUN chmod u+x vnc.sh
+RUN chmod u+x /opt/vnc.sh
 CMD ["/opt/vnc.sh"]
