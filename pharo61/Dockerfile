@@ -9,7 +9,7 @@ RUN mkdir .vnc \
 
 RUN curl http://get.pharo.org/64/61+vmT | bash
 
-ADD ./*.st .
+ADD ./*.st ./
 RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
 RUN ./pharo Pharo.image st --save --quit ./CAs-IceBerg.st
 # RUN ./pharo Pharo.image get GitFileTree
