@@ -12,10 +12,10 @@ RUN apt-get update && \
 ENV USER root
 # Set default password
 COPY password.txt .
-RUN mkdir $HOME/.vnc \
-  && cat password.txt password.txt | vncpasswd -f > $HOME/.vnc/passwd \
+RUN mkdir /home/myuser/.vnc \
+  && cat password.txt password.txt | vncpasswd -f > /home/myuser/.vnc/passwd \
   && rm password.txt \
-  && chmod 600 $HOME/.vnc/passwd
+  && chmod 600 /home/myuser/.vnc/passwd
 
 # Expose VNC port
 EXPOSE 5901
