@@ -13,8 +13,7 @@ ENV USER root
 # Set default password
 COPY password.txt .
 RUN cat password.txt password.txt | vncpasswd -f > /opt/vncpasswd \
-  && rm password.txt \
-  && chmod 600 /opt/vncpasswd
+  && rm password.txt 
 
 # Expose VNC port
 EXPOSE 5901
