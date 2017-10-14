@@ -10,4 +10,8 @@ RUN apt-get -qy --no-install-recommends install \
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
+#CMD ["/opt/pharo","Pharo.image","--no-quit"]
+CMD ["./pharo","Pharo.image","--no-quit"]
+
 RUN echo "Dependencies for Pharo are installed"
