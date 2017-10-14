@@ -4,7 +4,9 @@ MAINTAINER CAs
 RUN groupadd mygroup && useradd -m -g mygroup myuser
 USER myuser
 WORKDIR /home/myuser
-#WORKDIR /opt
+RUN mkdir .vnc \
+  && if [ -f /opt/vncpasswd ]; then cp /opt/vncpasswd .vnc/passwd; chmod 0600 .vnc/passwd; fi 
+
 RUN curl http://get.pharo.org/64/61+vmT | bash
 
 ADD ./*.st .
