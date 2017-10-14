@@ -7,4 +7,4 @@ vncserver :1 -geometry 1280x800 -depth 24
 # && tail -F /root/.vnc/*.log #to keep the container from terminating because the CMD did.
 set DISPLAY=:1
 
-./pharo-ui -vm-display-X11 -display :1 Pharo.image --no-quit
+./pharo-ui -vm-display-X11 --display :1 Pharo.image --no-quit
