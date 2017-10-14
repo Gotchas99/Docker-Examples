@@ -7,9 +7,6 @@ WORKDIR /home/myuser
 #WORKDIR /opt
 RUN curl http://get.pharo.org/64/61+vm | bash
 
-#CMD ["/opt/pharo","Pharo.image","--no-quit"]
-CMD ["./pharo","Pharo.image","--no-quit"]
-
 ADD ./*.st .
 RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
 # RUN ./pharo Pharo.image get GitFileTree
