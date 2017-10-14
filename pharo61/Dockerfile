@@ -1,4 +1,4 @@
-FROM gotchas/pharo-base64
+FROM gotchas/pharo-base64-vnc
 MAINTAINER CAs
 
 RUN groupadd mygroup && useradd -m -g mygroup myuser
