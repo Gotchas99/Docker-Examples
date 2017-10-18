@@ -1,5 +1,5 @@
 #FROM gotchas/pharo-rfb
-FROM gotchas/pharo-vnc
+FROM gotchas/pharo-base64-vnc
 MAINTAINER Christer Assmundsson
 
 EXPOSE 1701 5901
