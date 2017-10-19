@@ -1,9 +1,7 @@
 FROM gotchas/pharo-base64-vnc
 MAINTAINER CAs
 
-RUN groupadd mygroup && useradd -m -g mygroup myuser
-USER myuser
-WORKDIR /home/myuser
+WORKDIR /opt
 RUN mkdir .vnc \
   && chmod go-rx .vnc \
   && if [ -f /opt/vncpasswd ]; then cp /opt/vncpasswd .vnc/passwd; chmod 0600 .vnc/passwd; fi 

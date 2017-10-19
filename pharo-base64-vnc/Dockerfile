@@ -5,9 +5,9 @@ FROM  gotchas/pharo-base64
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
   fluxbox \
-#  lxde-core \
   lxterminal \
   tightvncserver
+#  lxde-core \
 
 ENV USER root
 # Set default password
