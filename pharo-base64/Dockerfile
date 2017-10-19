@@ -10,6 +10,8 @@ RUN apt-get -qy --no-install-recommends install \
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN chgrp -R 0 /opt && \
+    chmod -R g=u /opt
 
 #CMD ["/opt/pharo","Pharo.image","--no-quit"]
 CMD ["./pharo","Pharo.image","--no-quit"]
