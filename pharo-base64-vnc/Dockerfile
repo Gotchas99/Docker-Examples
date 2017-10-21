@@ -4,7 +4,7 @@ FROM  gotchas/pharo-base64
 
 # Install LXDE, VNC server and Firefox
 RUN apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y \
+  DEBIAN_FRONTEND=noninteractive apt-get  -qy --no-install-recommends install \
   fluxbox \
   lxterminal \
   tightvncserver
