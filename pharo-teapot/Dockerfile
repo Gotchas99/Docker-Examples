@@ -6,5 +6,5 @@ MAINTAINER Christer Assmundsson
 EXPOSE 1701
 
 RUN ./pharo Pharo.image get Teapot
-RUN chmod -R g=u /opt
+RUN chmod -R g=u Pharo* pharo* .config
 RUN echo "Teapot installed"
