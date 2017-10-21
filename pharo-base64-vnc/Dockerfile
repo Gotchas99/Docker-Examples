@@ -1,3 +1,4 @@
+# gotchas/pharo-base64-vnc
 # for running interactive Pharo with VNC
 FROM  gotchas/pharo-base64
 
@@ -9,6 +10,9 @@ RUN apt-get update && \
   tightvncserver
 #  lxde-core \
 
+RUN apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+	
 ENV USER root
 # Set default password
 COPY password.txt .
@@ -21,5 +25,5 @@ EXPOSE 5901
 # Copy VNC script that handles restarts
 COPY vnc.sh /opt
 
-RUN chmod u+x /opt/vnc.sh
+RUN chmod ugo+x /opt/vnc.sh
 CMD ["/opt/vnc.sh"]

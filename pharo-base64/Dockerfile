@@ -1,3 +1,4 @@
+# gotchas/pharo-base64
 FROM ubuntu:14.04
 MAINTAINER CAs
 
@@ -7,11 +8,8 @@ RUN apt-get -qy --no-install-recommends install \
         curl \
         unzip
 
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-RUN chgrp -R 0 /opt && \
-    chmod -R g=u /opt
+RUN apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #CMD ["/opt/pharo","Pharo.image","--no-quit"]
 CMD ["./pharo","Pharo.image","--no-quit"]
