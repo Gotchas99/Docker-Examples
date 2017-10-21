@@ -16,10 +16,12 @@ RUN mkdir .vnc \
 	&& cp vncpasswd .vnc/passwd \
 	&& chmod 0600 .vnc/passwd
 
-RUN curl http://get.pharo.org/64/61+vmT | bash
+# this VM is currently not compatible with IceBerg. use 61+vmT for that
+RUN curl get.pharo.org/64/61+vmI | bash
+#RUN curl get.pharo.org/64/61+vmT | bash
 
 ADD ./*.st ./
 RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
 # RUN ./pharo Pharo.image st --save --quit ./CAs-IceBerg.st
-RUN ./pharo Pharo.image get GitFileTree
+# RUN ./pharo Pharo.image get GitFileTree
 RUN echo "Pharo installed"

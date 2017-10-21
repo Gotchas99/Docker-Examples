@@ -94,9 +94,11 @@ setProxy: aPxString
 !ProxyEnv class methodsFor: 'as yet unclassified' stamp: 'ChristerAssmundsson 9/14/2016 09:27'!
 checkProxyEnv
 	OSEnvironment current
-		at: 'PROXY_URL'
-		ifPresent: [ :px | self setProxy: px ]
-		ifAbsent: [ NetworkSystemSettings useHTTPProxy: false ]! !
+		at: 'http_proxy'
+		ifPresent: [ :px | self setProxy: px.
+						Transcript crShow:  'Proxy setup: ',px ]
+		ifAbsent: [ NetworkSystemSettings useHTTPProxy: false.
+						Transcript crShow:  'No proxy environment var.']! !
 
 !ProxyEnv class methodsFor: 'as yet unclassified' stamp: 'ChristerAssmundsson 9/13/2016 11:31'!
 initialize
