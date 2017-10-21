@@ -7,4 +7,5 @@ RUN ./pharo Pharo.image config http://www.smalltalkhub.com/mc/Gotchas/Jobb/main 
 #temp:
 CMD ["./pharo","Pharo.image","--no-quit"]
 
+chmod -R g=u /opt
 RUN echo "XmlJson installed"

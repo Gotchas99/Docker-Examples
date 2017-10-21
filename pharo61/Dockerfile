@@ -24,4 +24,5 @@ ADD ./*.st ./
 RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
 # RUN ./pharo Pharo.image st --save --quit ./CAs-IceBerg.st
 # RUN ./pharo Pharo.image get GitFileTree
+chmod -R g=u /opt
 RUN echo "Pharo installed"
