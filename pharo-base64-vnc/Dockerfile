@@ -7,6 +7,7 @@ RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get  -qy --no-install-recommends install \
   fluxbox \
   lxterminal \
+  xfonts-base \
   tightvncserver
 #  lxde-core \
 
