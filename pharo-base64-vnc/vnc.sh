@@ -2,8 +2,10 @@
 
 # Remove VNC lock (if process already killed)
 rm /tmp/.X1-lock /tmp/.X11-unix/X1
-# reset file permissions
+# copy vnc config & set permissions
+mkdir .vnc 
 chmod 0700 .vnc
+cp vncpasswd .vnc/passwd 
 chmod 0600 .vnc/passwd
 # Run VNC server with tail in the foreground
 vncserver :1 -geometry 1280x800 -depth 24

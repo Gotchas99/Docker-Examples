@@ -11,11 +11,6 @@ USER myuser
 RUN chmod -R u+w,g+w /home/myuser
 ENV HOME=/opt
 
-RUN mkdir .vnc \
-	&& chmod 0700 .vnc \
-	&& cp vncpasswd .vnc/passwd \
-	&& chmod 0600 .vnc/passwd
-
 # this VM is currently not compatible with IceBerg. use 61+vmT for that
 RUN curl get.pharo.org/64/61+vmI | bash
 #RUN curl get.pharo.org/64/61+vmT | bash
