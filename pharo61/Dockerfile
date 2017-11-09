@@ -1,5 +1,6 @@
 # gotchas/pharo61
-FROM gotchas/pharo-base64-vnc
+FROM gotchas/pharo-base64
+#FROM gotchas/pharo-base64-vnc
 MAINTAINER CAs
 
 #Setup user and permissions
