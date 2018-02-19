@@ -5,7 +5,8 @@ MAINTAINER CAs
 #RUN dpkg --add-architecture i386
 RUN apt-get update -q
 RUN apt-get -qy --no-install-recommends install \
-        curl \
+        libfreetype6 \
+	curl \
         unzip
 
 RUN apt-get clean \
