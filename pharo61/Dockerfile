@@ -3,6 +3,8 @@ FROM gotchas/pharo-base64
 #FROM gotchas/pharo-base64-vnc
 MAINTAINER CAs
 
+ENV http_proxy ${http_proxy}
+
 #Setup user and permissions
 RUN chgrp -R 0 /opt && \
     chmod -R g=u /opt
@@ -17,7 +19,10 @@ RUN curl get.pharo.org/64/61+vmI | bash
 #RUN curl get.pharo.org/64/61+vmT | bash
 
 ADD ./*.st ./
-RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
+RUN ls -la
+RUN ./pharo Pharo.image --version
+RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnvX.st
+RUN ./pharo Pharo.image --version
 # RUN ./pharo Pharo.image st --save --quit ./CAs-IceBerg.st
 # RUN ./pharo Pharo.image get GitFileTree
 RUN chmod -R g=u Pharo* pharo*

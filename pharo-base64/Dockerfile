@@ -1,12 +1,17 @@
 # gotchas/pharo-base64
-FROM ubuntu:14.04
+FROM debian
+#FROM ubuntu:16.04
+#FROM ubuntu:14.04
 MAINTAINER CAs
 
 #RUN dpkg --add-architecture i386
 RUN apt-get update -q
 RUN apt-get -qy --no-install-recommends install \
+		libfreetype6 \
         curl \
-        unzip
+        unzip \
+		ca-certificates \
+		iputils-ping
 
 RUN apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

@@ -75,8 +75,9 @@ shutDown: quitting
 !ProxyEnv class methodsFor: 'as yet unclassified' stamp: 'ChristerAssmundsson 9/14/2016 09:27'!
 startUp: resuming
 	resuming
-		ifTrue: [ self checkProxyEnv.
-			Transcript crShow:  'Proxy init.' ]! !
+		ifTrue: [ self traceCr: 'Checking proxy'.
+					self checkProxyEnv.
+			self traceCr:  'Proxy init.' ]! !
 
 !ProxyEnv class methodsFor: 'as yet unclassified' stamp: 'ChristerAssmundsson 9/13/2016 17:33'!
 setProxy: aPxString
@@ -96,12 +97,13 @@ checkProxyEnv
 	OSEnvironment current
 		at: 'http_proxy'
 		ifPresent: [ :px | self setProxy: px.
-						Transcript crShow:  'Proxy setup: ',px ]
+						self traceCr:  'Proxy setup: ',px ]
 		ifAbsent: [ NetworkSystemSettings useHTTPProxy: false.
-						Transcript crShow:  'No proxy environment var.']! !
+						self traceCr:  'No proxy environment var.']! !
 
 !ProxyEnv class methodsFor: 'as yet unclassified' stamp: 'ChristerAssmundsson 9/13/2016 11:31'!
 initialize
-	SessionManager default registerSystemClassNamed: self name! !
+	SessionManager default registerSystemClassNamed: self name.
+	self traceCr:  'ProxyEnv class initialized.'! !
 
 ProxyEnv initialize!
