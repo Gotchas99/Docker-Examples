@@ -21,7 +21,7 @@ RUN curl get.pharo.org/64/61+vmI | bash
 ADD ./*.st ./
 RUN ls -la
 RUN ./pharo Pharo.image --version
-RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnvX.st
+RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
 RUN ./pharo Pharo.image --version
 # RUN ./pharo Pharo.image st --save --quit ./CAs-IceBerg.st
 # RUN ./pharo Pharo.image get GitFileTree
