@@ -15,14 +15,14 @@ RUN chmod -R u+w,g+w /home/myuser
 ENV HOME=/opt
 
 # this VM is currently not compatible with IceBerg. use 61+vmT for that
-ADD pharo.conf /etc/security/limits.d/
+ADD *.conf /etc/security/limits.d/
 #RUN curl get.pharo.org/64/61+vmI | bash
 RUN curl get.pharo.org/64/61+vmT | bash
 
 ADD ./*.st ./
 RUN ls -la
 RUN ./pharo Pharo.image --version
-#RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
+RUN ./pharo Pharo.image st --save --quit ./CAs-ProxyEnv.st
 RUN ./pharo Pharo.image --version
 # RUN ./pharo Pharo.image st --save --quit ./CAs-IceBerg.st
 # RUN ./pharo Pharo.image get GitFileTree
