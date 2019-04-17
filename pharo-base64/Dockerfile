@@ -1,5 +1,5 @@
 # gotchas/pharo-base64
-FROM debian
+FROM debian:9
 #FROM ubuntu:16.04
 #FROM ubuntu:14.04
 MAINTAINER CAs
