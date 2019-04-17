@@ -8,6 +8,7 @@ RUN apt-get update -q
 RUN apt-get -qy --no-install-recommends install \
 		libfreetype6 \
         curl \
+		libcurl3-gnutls \
         unzip \
 		ca-certificates \
 		iputils-ping \
