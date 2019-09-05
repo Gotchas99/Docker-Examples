@@ -5,6 +5,8 @@ MAINTAINER CAs
 
 #ENV http_proxy ${http_proxy}
 
+ADD *.conf /etc/security/limits.d/
+
 #Setup user and permissions
 RUN chgrp -R 0 /opt && \
     chmod -R g=u /opt && \
@@ -22,8 +24,6 @@ RUN adduser --disabled-password --gid 0 --gecos "MyUser" myuser
 USER myuser
 WORKDIR /opt
 ENV HOME=/opt
-
-ADD *.conf /etc/security/limits.d/
 
 #RUN curl get.pharo.org/64/70+vmI | bash
 RUN  umask 0002 &&\
