@@ -5,7 +5,6 @@ FROM debian:9
 MAINTAINER CAs
 
 RUN apt-get update -q
-RUN apt-get -qy --no-install-recommends install apt-utils
 RUN apt-get -qy --no-install-recommends install \
 		libfreetype6 \
         curl \
