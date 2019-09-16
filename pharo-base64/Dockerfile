@@ -6,14 +6,15 @@ MAINTAINER CAs
 
 RUN apt-get update -q
 RUN apt-get -qy --no-install-recommends install \
-		libfreetype6 \
+	libfreetype6 \
         curl \
-		libcurl3-gnutls \
+	libcurl3-gnutls \
         unzip \
-		ca-certificates \
-		iputils-ping \
-		nano \
-		telnet
+	ca-certificates \
+	git \
+	iputils-ping \
+	nano \
+	telnet
 
 RUN apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
