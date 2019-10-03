@@ -9,6 +9,7 @@ RUN apt-get -qy --no-install-recommends install \
 	libfreetype6 \
         curl \
 	libcurl3-gnutls \
+	libcairo2 \
         unzip \
 	ca-certificates \
 	git \
