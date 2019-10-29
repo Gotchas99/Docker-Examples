@@ -10,6 +10,7 @@ RUN apt-get -qy --no-install-recommends install \
         curl \
 	libcurl3-gnutls \
 	libcairo2 \
+	unixodbc \
         unzip \
 	ca-certificates \
 	git \
