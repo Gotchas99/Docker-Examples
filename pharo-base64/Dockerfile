@@ -6,19 +6,18 @@ MAINTAINER CAs
 
 RUN apt-get update -q \
 	&& apt-get -qy --no-install-recommends install \
+		ca-certificates \
 		curl \
 	&& curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
 	&& curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list \
 	&& apt-get update -q \
 	&&n ACCEPT_EULA=Y apt-get -qy --no-install-recommends install \
 		libfreetype6 \
-        	curl \
-		libcurl3-gnutls \
+        	libcurl3-gnutls \
 		libcairo2 \
 		unixodbc \
 		msodbcsql17 \
         	unzip \
-		ca-certificates \
 		git \
 		iputils-ping \
 		nano \
