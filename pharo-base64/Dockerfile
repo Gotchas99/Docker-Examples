@@ -6,6 +6,7 @@ MAINTAINER CAs
 
 RUN apt-get update -q \
 	&& apt-get -qy --no-install-recommends install \
+		gnupg2 \
 		ca-certificates \
 		curl \
 		libfreetype6 \
