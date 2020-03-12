@@ -21,7 +21,7 @@ RUN apt-get update -q \
 	&& curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
 	&& curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list \
 	&& apt-get update -q \
-	&&n ACCEPT_EULA=Y apt-get -qy --no-install-recommends install \
+	&& ACCEPT_EULA=Y apt-get -qy --no-install-recommends install \
 		unixodbc \
 		msodbcsql17 \
 		mssql-tools \
